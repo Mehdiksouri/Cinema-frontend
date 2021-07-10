@@ -35,5 +35,8 @@ public host:String="http://localhost:8080"
     let url=p._links.tickets.href.replace("{?projection}","");
     return this.http.get(url+"?projection=ticketProj");
   }
+  payerTickets(dataForm: any) {
+    return this.http.post(this.host+"/payerTickets", dataForm);
+  }
 }
 
